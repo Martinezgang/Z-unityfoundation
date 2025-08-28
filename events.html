@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events - Z-Unity Foundation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: linear-gradient(135deg, #000000, #4B0082, #0F172A, #1f2937); color: white; }
+    .card { background-color: rgba(0,0,0,0.6); border-radius: 1rem; padding: 1.5rem; transition: 0.3s; }
+    .card:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(167, 139, 250, 0.7); }
+  
+    .glow-logo {
+      width: 12rem;
+      filter: drop-shadow(0 0 15px #8b5cf6)
+              drop-shadow(0 0 30px #3b82f6)
+              drop-shadow(0 0 45px #c084fc);
+      animation: pulseGlow 3s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      from {
+        filter: drop-shadow(0 0 15px #8b5cf6)
+                drop-shadow(0 0 30px #3b82f6)
+                drop-shadow(0 0 45px #c084fc);
+      }
+      to {
+        filter: drop-shadow(0 0 25px #c084fc)
+                drop-shadow(0 0 50px #60a5fa)
+                drop-shadow(0 0 70px #d8b4fe);
+      }
+    }
+    .glow-btn {
+      background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: bold;
+      box-shadow: 0 0 15px #8b5cf6, 0 0 30px #3b82f6;
+      transition: all 0.3s ease-in-out;
+      display: inline-block;
+    }
+    .glow-btn:hover {
+      box-shadow: 0 0 25px #c084fc, 0 0 50px #60a5fa;
+      transform: scale(1.05);
+    }
+
+  
+    body {
+      background: linear-gradient(270deg, #000000, #4B0082, #0F172A, #1f2937);
+      background-size: 600% 600%;
+      animation: gradientFlow 25s ease infinite;
+      color: white;
+    }
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .starry-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      background-image: radial-gradient(2px 2px at 20px 20px, rgba(255,255,255,0.6), transparent),
+                        radial-gradient(2px 2px at 50px 100px, rgba(167,139,250,0.8), transparent),
+                        radial-gradient(2px 2px at 300px 200px, rgba(96,165,250,0.7), transparent);
+      background-size: 400px 400px;
+      animation: starsMove 60s linear infinite;
+      z-index: 0;
+    }
+    @keyframes starsMove {
+      from { background-position: 0 0; }
+      to { background-position: -400px -400px; }
+    }
+    .shimmer {
+      position: fixed;
+      top: 0; left: 0;
+      width: 200%; height: 200%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+      animation: shimmerMove 12s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    @keyframes shimmerMove {
+      0% { transform: translateX(-50%) translateY(-50%) rotate(15deg); }
+      100% { transform: translateX(0%) translateY(0%) rotate(15deg); }
+    }
+  
+    .hearts-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .heart {
+      position: absolute;
+      width: 20px; height: 20px;
+      background: #c084fc;
+      transform: rotate(45deg);
+      box-shadow: 0 0 10px #c084fc, 0 0 20px #60a5fa;
+      animation: floatUp 20s linear infinite;
+      opacity: 0.6;
+    }
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: inherit;
+    }
+    .heart::before { left: -10px; }
+    .heart::after { top: -10px; }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+      20% { opacity: 0.6; }
+      80% { opacity: 0.6; }
+      100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+    }
+  
+    nav.always-glow {
+      background: rgba(0,0,0,0.7);
+      box-shadow: 0 0 10px #8b5cf6, 0 0 20px #3b82f6, 0 0 30px #c084fc;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    nav.always-glow a:hover {
+      text-shadow: 0 0 8px #c084fc, 0 0 15px #60a5fa;
+      color: #c084fc;
+    }
+
+    nav {
+      background: rgba(0,0,0,0.7);
+      box-shadow: 0 0 15px #8b5cf6, 0 0 30px #3b82f6;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    nav a:hover {
+      text-shadow: 0 0 8px #c084fc, 0 0 15px #60a5fa;
+      color: #c084fc;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts-container">
+    <div class="heart" style="left:10%; width:15px; height:15px; animation-duration:18s;"></div>
+    <div class="heart" style="left:25%; width:25px; height:25px; animation-duration:22s; background:#60a5fa;"></div>
+    <div class="heart" style="left:40%; width:20px; height:20px; animation-duration:20s; background:#c084fc;"></div>
+    <div class="heart" style="left:55%; width:18px; height:18px; animation-duration:24s; background:#9ca3af;"></div>
+    <div class="heart" style="left:70%; width:28px; height:28px; animation-duration:21s; background:#60a5fa;"></div>
+    <div class="heart" style="left:85%; width:22px; height:22px; animation-duration:25s; background:#c084fc;"></div>
+  </div>
+
+</head>
+<body>
+  <div class="starry-bg"></div>
+  <div class="shimmer"></div>
+
+</head>
+<body>
+  
+  <nav class="always-glow p-4 flex justify-between items-center">
+    <a href="index.html" class="text-lg font-bold">Z-Unity Foundation</a>
+    <div class="space-x-6">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="events.html" class="hover:underline">Events</a>
+      <a href="services.html" class="hover:underline">Services</a>
+      <a href="donate.html" class="hover:underline">Donate</a>
+      <a href="volunteer.html" class="hover:underline">Volunteer</a>
+      <a href="partnerships.html" class="hover:underline">Partnerships</a>
+    </div>
+  </nav>
+
+
+  <section class="py-20 max-w-6xl mx-auto">
+    <h1 class="text-center text-4xl font-bold mb-12">Our Events</h1>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card"><h2 class="font-bold text-xl mb-2">Thanksgiving Food Drives 🦃</h2><p>Nobody should sit at an empty table on Thanksgiving. We load up families with turkeys, full meals, and plenty of love to go around.</p></div>
+      <div class="card"><h2 class="font-bold text-xl mb-2">Christmas Toy & Clothing Giveaways 🎄</h2><p>The holidays hit different when kids light up with joy. From coats to toys, we turn Christmas into a season of giving back.</p></div>
+      <div class="card"><h2 class="font-bold text-xl mb-2">Senior Support Days 👵🏽👴🏽</h2><p>Our elders deserve more than respect — they deserve warmth, meals, and real connection. We show up to remind them they’re never alone.</p></div>
+      <div class="card"><h2 class="font-bold text-xl mb-2">Back-to-School Drives 🎒✏️</h2><p>Fresh supplies, brand-new backpacks, and confidence for the first day. We make sure kids step into school ready to shine.</p></div>
+      <div class="card"><h2 class="font-bold text-xl mb-2">Community Outreach Pop-Ups 🏙️</h2><p>From food bags to hygiene kits — we pop up right where we’re needed most. It’s love in motion, spreading hope on the streets.</p></div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-center mt-20 mb-8">Upcoming Events 📅</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="card"><h3 class="font-bold text-lg mb-2">Spring 2025: Community Health Fair</h3><p>Free health checks, wellness resources, and community fun — because caring for our neighbors is top priority.</p></div>
+      <div class="card"><h3 class="font-bold text-lg mb-2">Summer 2025: Youth Sports Day</h3><p>Games, mentorship, and fun in the sun! A day dedicated to keeping kids active, inspired, and connected.</p></div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="volunteer.html" class="hover:underline">Volunteer</a>
+      <a href="partnerships.html" class="hover:underline">Partnerships</a> class="glow-btn">Join Us at Our Next Event</a>
+    </div>
+  </section>
+</body>
+</html>
