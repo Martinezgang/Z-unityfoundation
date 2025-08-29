@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Z-Unity Foundation</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <style>
+    body {
+      background: linear-gradient(270deg, #000000, #4B0082, #0F172A, #1f2937);
+      background-size: 600% 600%;
+      animation: gradientFlow 25s ease infinite;
+      color: white;
+    }
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .glow-btn {
+      background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+      color: white; padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem; font-weight: bold;
+      box-shadow: 0 0 15px #8b5cf6, 0 0 30px #3b82f6;
+      transition: all 0.3s ease-in-out; display: inline-block;
+    }
+    .glow-btn:hover { box-shadow: 0 0 25px #c084fc, 0 0 50px #60a5fa; transform: scale(1.05); }
+    nav.always-glow {
+      background: rgba(0,0,0,0.7);
+      box-shadow: 0 0 10px #8b5cf6, 0 0 20px #3b82f6, 0 0 30px #c084fc;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    nav.always-glow a:hover {
+      text-shadow: 0 0 8px #c084fc, 0 0 15px #60a5fa; color: #c084fc;
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <nav class="always-glow p-4 flex justify-between items-center">
+    <a href="index.html" class="text-lg font-bold">Z-Unity Foundation</a>
+    <div class="space-x-6">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="services.html">Services</a>
+      <a href="donate.html">Donate</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partnerships.html">Partnerships</a>
+    </div>
+  </nav>
+
+  <section class="text-center py-20 relative z-10">
+    <img src="assets/images/logo.png" alt="Z-Unity Logo" class="mx-auto h-40">
+    <h1 class="text-3xl md:text-5xl font-bold mt-6">Z-Unity Foundation Inc.</h1>
+    <p class="max-w-3xl mx-auto mt-6 text-lg md:text-xl">
+      Z-Unity Foundation Inc. was born from the hearts of five kids — Zyair, Zaraa, Zion, Zayden, and Zen — 
+      with the guidance of their parents, Asia & Mario Martinez. Together, they prove that age has nothing 
+      to do with impact. We stand for the elderly, the mentally disabled, and families in underserved 
+      communities. We put meals on tables, clothes in closets, and hope in the hearts of those who need it most. 
+      Z-Unity isn’t just another nonprofit — it’s a movement. Join us in rewriting the story of giving.
+    </p>
+    <div class="mt-8 space-x-6">
+      <a href="volunteer.html" class="glow-btn">Get Involved</a>
+      <a href="donate.html" class="glow-btn">Donate Now</a>
+    </div>
+  </section>
+
+  <section class="py-16 relative z-10">
+    <h2 class="text-center text-2xl font-bold mb-8">Our Volunteers in Action</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <img src="assets/images/volunteer1.png" class="rounded-xl shadow-lg" alt="Volunteer giving food">
+      <img src="assets/images/volunteer2.png" class="rounded-xl shadow-lg" alt="Volunteers working together">
+    </div>
+  </section>
+  <footer class="text-center py-6 bg-black bg-opacity-60 relative z-10">
+    <p>&copy; 2025 Z-Unity Foundation Inc. All Rights Reserved.</p>
+    <p class="mt-2">
+      <a href="https://instagram.com/zunityfoundationinc" target="_blank" class="hover:underline">📷 @zunityfoundationinc</a>
+    </p>
+  </footer>
+</body>
+</html>

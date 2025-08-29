@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Z-Unity Foundation</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <style>
+    body {
+      background: linear-gradient(270deg, #000000, #4B0082, #0F172A, #1f2937);
+      background-size: 600% 600%;
+      animation: gradientFlow 25s ease infinite;
+      color: white;
+    }
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .glow-btn {
+      background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+      color: white; padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem; font-weight: bold;
+      box-shadow: 0 0 15px #8b5cf6, 0 0 30px #3b82f6;
+      transition: all 0.3s ease-in-out; display: inline-block;
+    }
+    .glow-btn:hover { box-shadow: 0 0 25px #c084fc, 0 0 50px #60a5fa; transform: scale(1.05); }
+    nav.always-glow {
+      background: rgba(0,0,0,0.7);
+      box-shadow: 0 0 10px #8b5cf6, 0 0 20px #3b82f6, 0 0 30px #c084fc;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    nav.always-glow a:hover {
+      text-shadow: 0 0 8px #c084fc, 0 0 15px #60a5fa; color: #c084fc;
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <nav class="always-glow p-4 flex justify-between items-center">
+    <a href="index.html" class="text-lg font-bold">Z-Unity Foundation</a>
+    <div class="space-x-6">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="services.html">Services</a>
+      <a href="donate.html">Donate</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partnerships.html">Partnerships</a>
+    </div>
+  </nav>
+
+  <section class="flex items-center justify-center h-screen text-center">
+    <div>
+      <h1 class="text-5xl font-bold mb-6">Thank You 💜</h1>
+      <p class="text-xl mb-6">We’re grateful you’ve joined the Z-Unity movement!</p>
+      <a href="index.html" class="glow-btn">Back to Home</a>
+    </div>
+  </section>
+  <footer class="text-center py-6 bg-black bg-opacity-60 relative z-10">
+    <p>&copy; 2025 Z-Unity Foundation Inc. All Rights Reserved.</p>
+    <p class="mt-2">
+      <a href="https://instagram.com/zunityfoundationinc" target="_blank" class="hover:underline">📷 @zunityfoundationinc</a>
+    </p>
+  </footer>
+</body>
+</html>
